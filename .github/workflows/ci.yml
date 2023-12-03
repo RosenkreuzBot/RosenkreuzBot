@@ -25,19 +25,6 @@ jobs:
           distribution: 'adopt'
           cache: maven
 
-      # Use preinstalled PostgreSQL
-      - name: Start PostgreSQL
-        run: |
-            sudo systemctl start postgresql.service
-            pg_isready
-
-      # Set up test environment for PostgreSQl DB
-      - name: Set up test environment
-        run: |
-          export POSTGRES_USER=test POSTGRES_PASSWORD=test POSTGRES_DATABASE=test
-          sudo -u postgres psql --command="CREATE DATABASE test" --command="CREATE USER test PASSWORD 'test'" --command="\du"
-          sudo -u postgres psql --command="GRANT ALL PRIVILEGES ON DATABASE test TO test" --command="\du"
-
       # Check code style and execute tests
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
