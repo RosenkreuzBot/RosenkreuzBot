@@ -35,12 +35,8 @@ jobs:
       - name: Set up test environment
         run: |
           export POSTGRES_USER=test POSTGRES_PASSWORD=test POSTGRES_DATABASE=test
-          sudo -u postgres psql 
-          CREATE DATABASE test 
-          CREATE DATABASE test WITH ENCRYPTED PASSWORD 'test'
-          GRANT ALL PRIVILEGES ON DATABASE test TO test
-          \du
-          exit
+          sudo -u postgres psql --command="CREATE DATABASE test" --command="CREATE USER test PASSWORD 'test'" --command="\du"
+          sudo -u postgres psql --command="GRANT ALL PRIVILEGES ON DATABASE test TO test" --command="\du"
 
       # Check code style and execute tests
       - name: Build with Maven
