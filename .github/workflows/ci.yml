@@ -13,12 +13,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      # Check out code
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      # Set up JDK
       - name: Set up JDK 17
         uses: actions/setup-java@v2
         with:
           java-version: '17'
           distribution: 'adopt'
           cache: maven
+
+      # Use preinstalled PostgreSQL
+      - name: Start PostgreSQL
+        run: |
+            sudo systemctl start postgresql.service
+            pg_isready
+
+      # Check code style and execute tests
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
