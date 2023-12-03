@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa985fe3-f3a4-45c1-83e5-218a28de3bb8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env.sample" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/changelog/db.changelog-master.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/liquibase.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/foalex/rosenkreuzbot/RosenkreuzBotApplicationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RosenkreuzBotApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/foalex/rosenkreuzbot/RosenkreuzBotApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +103,7 @@
       <updated>1701461729784</updated>
       <workItem from="1701461732971" duration="2139000" />
       <workItem from="1701484390004" duration="2434000" />
-      <workItem from="1701576112702" duration="5475000" />
+      <workItem from="1701576112702" duration="5841000" />
     </task>
     <servers />
   </component>
