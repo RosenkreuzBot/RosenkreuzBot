@@ -1,0 +1,21 @@
+#Database Connectivity Config
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/${POSTGRES_DATABASE}
+    driver-class-name: org.postgresql.Driver
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    open-in-view: false
+
+#Server Config
+server:
+  port: 8081
+
+#TestContainers Config
+testcontainers:
+  reuse:
+    enable: true
