@@ -35,7 +35,7 @@ jobs:
       - name: Set up test environment
         run: |
           sudo -u postgres psql
-          sudo -u postgres createuser ${POSTGRES_USERNAME}
+          sudo -u postgres createuser "${POSTGRES_USERNAME}"
           \du
 
       # Check code style and execute tests
