@@ -26,6 +26,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature-auto-bump" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -104,7 +109,7 @@
       <updated>1701461729784</updated>
       <workItem from="1701461732971" duration="2139000" />
       <workItem from="1701484390004" duration="2434000" />
-      <workItem from="1701576112702" duration="5142000" />
+      <workItem from="1701576112702" duration="5475000" />
     </task>
     <servers />
   </component>
