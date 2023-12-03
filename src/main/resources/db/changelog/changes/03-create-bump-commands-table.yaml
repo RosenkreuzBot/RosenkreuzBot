@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-bump-commands-table
+      author: AlexRosenkreuz
+      changes:
+        - createTable:
+            tableName: bump_commands
+            schemaName: auto_bump
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: insert-default-bump-commands-to-db
+      author: AlexRosenkreuz
+      changes:
+        - insert:
+            tableName: bump_commands
+            schemaName: auto_bump
+            columns:
+              - column:
+                  name: name
+                  value: /like
+        - insert:
+            tableName: bump_commands
+            schemaName: auto_bump
+            columns:
+              - column:
+                  name: name
+                  value: /bump
+        - insert:
+            tableName: bump_commands
+            schemaName: auto_bump
+            columns:
+              - column:
+                  name: name
+                  value: /up
