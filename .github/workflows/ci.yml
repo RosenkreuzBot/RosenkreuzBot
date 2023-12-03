@@ -35,8 +35,6 @@ jobs:
       - name: Set up test environment
         run: |
           sudo -u postgres psql --command="CREATE USER ${POSTGRES_USERNAME} PASSWORD '${POSTGRES_PASSWORD}'" --command="\du"
-          sudo -u postgres createdb --owner=${POSTGRES_USERNAME} ${POSTGRES_DATABASE}
-          PGPASSWORD=${POSTGRES_PASSWORD} psql --username=${POSTGRES_USERNAME} --host=localhost
 
       # Check code style and execute tests
       - name: Build with Maven
