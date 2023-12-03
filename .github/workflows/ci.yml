@@ -34,7 +34,7 @@ jobs:
       # Set up test environment for PostgreSQl DB
       - name: Set up test environment
         run: |
-          export POSTGRES_USER = test POSTGRES_PASSWORD = test POSTGRES_DATABASE = test
+          export POSTGRES_USER=test POSTGRES_PASSWORD=test POSTGRES_DATABASE=test
           sudo -u postgres psql 
           CREATE DATABASE test 
           CREATE DATABASE test WITH ENCRYPTED PASSWORD 'test'
