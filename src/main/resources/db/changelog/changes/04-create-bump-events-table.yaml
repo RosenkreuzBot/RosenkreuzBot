@@ -1,0 +1,54 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-bump-events-table
+      author: AlexRosenkreuz
+      changes:
+        - createTable:
+            tableName: bump_events
+            schemaName: auto_bump
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: bot_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: command_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: guild_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_execute
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: next_execute
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: add-foreign-key-to-bump_events
+      author: AlexRosenkreuz
+      changes:
+        - addForeignKeyConstraint:
+            baseTableSchemaName: auto_bump
+            baseTableName: bump_events
+            baseColumnNames: command_id
+            referencedTableSchemaName: auto_bump
+            referencedTableName: bump_commands
+            referencedColumnNames: id
+            constraintName: fk_command_id
