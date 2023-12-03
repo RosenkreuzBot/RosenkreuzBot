@@ -34,7 +34,13 @@ jobs:
       # Set up test environment for PostgreSQl DB
       - name: Set up test environment
         run: |
-          sudo -u postgres psql --command="CREATE DATABASE test" --command="\c test"
+          sudo export POSTGRES_USER = test POSTGRES_PASSWORD = test POSTGRES_DATABASE = test
+          sudo -u postgres psql 
+          CREATE DATABASE test 
+          CREATE DATABASE test WITH ENCRYPTED PASSWORD 'test'
+          GRANT ALL PRIVILEGES ON DATABASE test TO test
+          \du
+          exit
 
       # Check code style and execute tests
       - name: Build with Maven
